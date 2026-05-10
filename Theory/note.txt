@@ -1,0 +1,25 @@
+------------------------
+Socket Programming
+
+tại sao phải chạy server trước, tại sao chạy client trước thì ko thành công?
+vô thi hỏi nêu lại quá trình socket programing with tcp,nêu từng thành bước và thành phần trong đó
+phương thức accept in ra 2 giá trị, 2 giá trị đo là gì ? ý nghĩa ntn?
+welcoming socket và connection socket có mqh ntn?
+client socket sẽ kết nối với cái nào trong server socket trước?
+address có vai trò gì trong việc gửi nhận dữ liệu hay ko trong tcp?
+
+UDP
+tại sao chạy client trước server trong udp thì ko bị lỗi?
+bỏ clientSocket.sendto(message.encode(), (serverHost, serverPort)) serverhost và port trong đó thì có chạy đc ko?
+serverSocket.bind(("", serverPort)) cái empty string ở đó tại sao ở đó? có ý nghĩa là gì?
+Dưới đây là sự khác biệt khi bạn điền tham số này:
+Dùng "" hoặc "0.0.0.0": Bạn đang dặn Server rằng "Ai gõ ở bất kỳ cánh cửa nào cũng mở". Một máy tính khác trong cùng mạng Wi-Fi (gọi vào 192.168.1.15), hoặc một ứng dụng khác trên chính máy đó (gọi vào 127.0.0.1), đều sẽ kết nối thành công tới Server của bạn. Đây là cách cấu hình phổ biến nhất khi bạn muốn các máy khác có thể truy cập vào Server của mình.
+
+Dùng "127.0.0.1": Bạn dặn Server "Chỉ tiếp người trong nhà". Lúc này, chỉ những ứng dụng chạy trên cùng máy tính đó mới kết nối được. Các máy tính khác trong mạng Wi-Fi hoặc Internet gửi dữ liệu đến đều sẽ bị từ chối hoặc không tìm thấy.
+
+Dùng IP cụ thể (VD: "192.168.1.15"): Bạn dặn Server "Chỉ mở đúng cái cửa Wi-Fi này thôi". Dữ liệu gửi đến từ các nguồn khác (ngay cả từ Localhost) cũng sẽ không được xử lý.
+
+
+
+
+

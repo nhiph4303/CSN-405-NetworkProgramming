@@ -1,0 +1,23 @@
+[
+    {
+        "node_id": "1221e77b-9c7d-4a49-a8ae-e3ef1b58ed25",
+        "ip": "127.0.0.1",
+        "port": 9002,
+        "role": "client",
+        "protocol": "TCP"
+    },
+    {
+        "node_id": "ed24b39d-81f3-497b-922d-e966618b333f",
+        "ip": "192.168.2.1",
+        "port": 9002,
+        "role": "server",
+        "protocol": "UDP"
+    },
+    {
+        "node_id": "03f5a0a0-ce25-4b55-84cd-8cfabc6cc630",
+        "ip": "127.0.0.2",
+        "port": 9002,
+        "role": "client",
+        "protocol": "TCP"
+    }
+]
