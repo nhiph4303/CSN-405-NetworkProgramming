@@ -1,0 +1,5 @@
+Date Time Level Message
+2025-03-04 12:30:45 INFO User Alice logged in
+2025-03-04 12:31:10 ERROR Disk space low
+2025-03-04 12:35:22 WARNING CPU temperature high
+2025-03-04 12:40:12 ERROR Database connection failed

@@ -1,0 +1,30 @@
+[
+     {
+          "node_id": "5172fa31-3121-4868-8a60-17756ee7c339",
+          "ip": "127.0.0.1",
+          "port": 14,
+          "role": "client",
+          "protocol": "tcp"
+     },
+     {
+          "node_id": "1b924dbd-ca78-4b86-bcc2-dcb333782d05",
+          "ip": "123.0.0.4",
+          "port": 15,
+          "role": "server",
+          "protocol": "tcp"
+     },
+     {
+          "node_id": "db4a1b0a-11fb-47da-8b8b-65487d283294",
+          "ip": "127.9.0.1",
+          "port": 14,
+          "role": "client",
+          "protocol": "udp"
+     },
+     {
+          "node_id": "a070c60f-ce28-42b5-a12e-ec6a05e8d8fb",
+          "ip": "128.0.0.2",
+          "port": 17,
+          "role": "server",
+          "protocol": "tcp"
+     }
+]

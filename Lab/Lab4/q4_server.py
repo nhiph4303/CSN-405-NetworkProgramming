@@ -20,8 +20,11 @@ def handle_client(client_socket, client_add):
     try:
         print(f"[SERVER] Client connected from {client_ip}:{client_port}")
 
-        for question, correct_answer in questions:
-            client_socket.sendall((question + " (true/false): ").encode())
+        first_question = questions[0][0] + " (true/false): "
+        client_socket.sendall(first_question.encode())
+
+        for i in range(len(questions)):
+            question, correct_answer = questions[i]
 
             answer = client_socket.recv(1024).decode().strip().lower()
             print(f"[SERVER] Received from {client_ip}:{client_port}: {answer}")
@@ -31,11 +34,17 @@ def handle_client(client_socket, client_add):
                 return
 
             if (answer == "true") == correct_answer:
-                client_socket.sendall("Yes, it's correct!".encode())
+                result = "Yes, it's correct!"
             else:
-                client_socket.sendall("No, it's wrong!".encode())
+                result = "No, it's wrong!"
 
-        client_socket.sendall("Quiz finished!".encode())
+            if i < len(questions) - 1:
+                next_question = questions[i + 1][0] + " (true/false): "
+                response = f"{result}\n[QUIZ] {next_question}"
+                client_socket.sendall(response.encode())
+            else:
+                response = f"{result}\nQuiz finished!"
+                client_socket.sendall(response.encode())
 
     except Exception as e:
         print(f"Error: {e}")
@@ -53,10 +62,8 @@ try:
     while True:
         conn, addr = server_socket.accept()
         print(f"New thread created for client at {addr}")
-
         t = threading.Thread(target=handle_client, args=(conn, addr), daemon=True)
         t.start()
-
 except KeyboardInterrupt:
     print("Server shutting down.")
 finally:
